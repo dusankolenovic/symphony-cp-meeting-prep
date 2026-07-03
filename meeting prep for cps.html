@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symphony &middot; Meeting Prep</title>
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --htec-charcoal:#f4f5fb;
+  --htec-mint:#9d92ff;
+  --htec-amazon-green:#9d92ff;
+  --htec-green-700:#5546e8;
+  --htec-green-800:#4335c9;
+  --htec-ink-050:#14141f;
+  --htec-ink-100:rgba(255,255,255,.08);
+  --htec-ink-200:rgba(255,255,255,.12);
+  --htec-ink-300:rgba(255,255,255,.22);
+  --htec-ink-400:#565a70;
+  --htec-ink-500:#7f8399;
+  --htec-ink-600:#a9adc4;
+  --htec-ink-700:#c4c7da;
+  --htec-ink-800:#d7d9e6;
+  --htec-citrine:#ffb800;
+  --accent:#9d92ff;
+  --fs:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fm:'Poppins',system-ui,sans-serif;
+}
+body{background:radial-gradient(90% 60% at 85% -20%,rgba(109,93,246,.20),transparent 55%),radial-gradient(70% 50% at -10% -5%,rgba(43,79,232,.14),transparent 55%),radial-gradient(50% 45% at 108% 45%,rgba(224,33,138,.07),transparent 60%),#08080f;color:var(--htec-charcoal);font-family:var(--fs);-webkit-font-smoothing:antialiased;}
+::selection{background:rgba(109,93,246,.45);color:#fff;}
+
+.chrome{background:#0c0c16;padding:13px 26px;display:flex;align-items:center;gap:18px;}
+.chrome-logo{font:700 12px var(--fm);letter-spacing:0.16em;color:#fff;text-transform:uppercase;}
+.chrome-div{width:1px;height:17px;background:#262637;}
+.bc{display:flex;align-items:center;gap:8px;font:500 10px var(--fm);letter-spacing:0.10em;text-transform:uppercase;color:#7f8399;}
+.bc .here{color:#fff;}
+.bc .sep{color:#3a3a4d;}
+.chrome-spacer{flex:1;}
+.chrome-cta{font:500 10px var(--fm);letter-spacing:0.06em;text-transform:uppercase;color:#7f8399;padding:7px 13px;border-radius:999px;border:1px solid #3a3a4d;background:transparent;cursor:pointer;}
+.chrome-cta:hover{color:var(--htec-mint);border-color:var(--htec-mint);}
+.chrome-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#6d5df6,#9d92ff);color:#fff;display:flex;align-items:center;justify-content:center;font:600 11px var(--fs);}
+
+.page{max-width:960px;margin:0 auto;padding:30px 28px 72px;}
+
+.cdown{display:flex;align-items:center;gap:15px;padding:17px 22px;background:#14141f;color:#fff;border:1px solid rgba(255,255,255,.10);border-radius:12px;margin-bottom:28px;box-shadow:0 4px 16px rgba(0,0,0,.10);}
+.cpulse{position:relative;width:9px;height:9px;border-radius:50%;background:var(--htec-mint);flex-shrink:0;}
+.cpulse::before{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--htec-mint);opacity:.4;filter:blur(5px);animation:pu 2.4s ease-in-out infinite;}
+@keyframes pu{0%,100%{opacity:.2;transform:scale(1);}50%{opacity:.6;transform:scale(1.4);}}
+.cwhen{font:500 10px var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--htec-mint);}
+.cmt{font:500 13px var(--fs);color:#fff;margin-top:2px;}
+.cmt span{color:#7f8399;}
+.cspacer{flex:1;}
+.csrc{font:500 10px var(--fm);letter-spacing:.08em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:7px;}
+.gdot{width:7px;height:7px;border-radius:2px;background:linear-gradient(135deg,#4285F4,#34A853);}
+
+.eyebrow{font-family:var(--fm);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#a9adc4;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.atag{color:var(--htec-amazon-green);background:rgba(109,93,246,.14);padding:5px 12px;border-radius:999px;font-weight:600;letter-spacing:.13em;border:1px solid rgba(109,93,246,.38);}
+.esep{color:#565a70;}
+
+.hero{background:#101019;border:1px solid rgba(255,255,255,.12);border-radius:12px 12px 0 0;padding:30px 30px 22px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:start;}
+.av{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#6d5df6,#9d92ff);color:#fff;display:flex;align-items:center;justify-content:center;font:500 32px var(--fs);letter-spacing:-.02em;flex-shrink:0;border:1px solid rgba(255,255,255,.18);}
+.hname{font-size:32px;font-weight:600;line-height:1.05;letter-spacing:-.025em;color:#f4f5fb;margin:0 0 6px;}
+.htitle{font-size:14.5px;font-weight:500;color:#c4c7da;margin:0 0 3px;}
+.hco{font-size:14.5px;color:#a9adc4;margin:0 0 13px;}
+.hco b{color:#f4f5fb;font-weight:600;}
+.hmeta{display:flex;flex-wrap:wrap;gap:4px 14px;font:400 12px var(--fm);color:#c4c7da;letter-spacing:.02em;}
+.hmeta span{display:inline-flex;align-items:center;gap:4px;}
+.hmeta b{color:#f4f5fb;font-weight:600;}
+.hicp{text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end;}
+.hicpn{font-size:52px;font-weight:500;line-height:1;letter-spacing:-.03em;color:var(--accent);}
+.hicpl{font-family:var(--fm);font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#a9adc4;}
+.hdeal-top{display:inline-flex;align-items:center;gap:7px;font:500 11px var(--fm);color:#c4c7da;padding:5px 11px;border-radius:999px;background:rgba(255,184,0,.10);border:1px solid rgba(255,184,0,.32);letter-spacing:.02em;}
+.hdeal-top b{color:var(--accent);font-weight:600;}
+.ddot-top{width:7px;height:7px;border-radius:50%;background:var(--htec-citrine);}
+
+.secs{background:#101019;border:1px solid rgba(255,255,255,.12);border-top:0;border-radius:0 0 12px 12px;}
+.sec{display:grid;grid-template-columns:170px 1fr;gap:30px;padding:24px 30px;border-top:1px solid rgba(255,255,255,.08);}
+.sec:first-child{border-top:1px solid rgba(255,255,255,.12);}
+.slbl{font-family:var(--fm);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--htec-amazon-green);padding-top:3px;display:flex;align-items:flex-start;gap:6px;}
+.slbl .num{color:var(--accent);font-weight:600;}
+.sbody{font-family:var(--fs);font-size:14.5px;line-height:1.6;color:#d7d9e6;}
+.sbody p{margin:0 0 11px;}
+.sbody p:last-child{margin:0;}
+.sbody em{font-style:normal;background:var(--htec-mint);color:#0c0c16;padding:0 4px;border-radius:2px;}
+.sbody b{font-weight:600;color:#f4f5fb;}
+
+.intel{margin:15px 0 13px;display:grid;grid-template-columns:1fr;gap:0;}
+.icell{padding:11px 0;display:flex;flex-direction:row;align-items:baseline;gap:14px;border-bottom:1px solid rgba(255,255,255,.08);}
+.icell:last-child{border-bottom:0;}
+.ik{font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--htec-amazon-green);flex:0 0 148px;padding-top:2px;}
+.iv{font-family:var(--fs);font-size:13px;line-height:1.45;color:#d7d9e6;flex:1;}
+.iv b{color:#f4f5fb;font-weight:600;}
+.iv em{font-style:italic;background:transparent;color:#c4c7da;padding:0;}
+.iw{font-family:var(--fm);font-size:10px;color:#c4c7da;letter-spacing:.04em;flex:0 0 auto;}
+
+.tldr{margin:4px 0 0;padding:12px 15px;background:#1c1c2b;border:1px solid rgba(255,255,255,.10);color:#fff;border-radius:8px;font-size:13.5px;line-height:1.5;}
+.tldrk{font-family:var(--fm);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--htec-mint);margin-right:7px;}
+
+.pains{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.pains li{display:grid;grid-template-columns:20px 1fr;gap:12px;}
+.pn{font-family:var(--fm);font-size:10.5px;font-weight:500;letter-spacing:.06em;color:#a9adc4;padding-top:3px;}
+.pains b{display:block;color:#f4f5fb;font-weight:600;margin-bottom:2px;}
+.psrc{font-family:var(--fm);font-size:10.5px;color:#c4c7da;letter-spacing:.02em;margin-top:4px;}
+.psrc::before{content:"\21B3\20";color:#a9adc4;}
+
+.angles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;padding-bottom:17px;border-bottom:1px solid rgba(255,255,255,.08);}
+button.angle{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-family:var(--fs);
+  font-size:13px;
+  font-weight:500;
+  padding:9px 17px;
+  border-radius:9999px;
+  background-color:#6d5df6 !important;
+  color:#ffffff !important;
+  border:2px solid transparent;
+  outline:none;
+  cursor:pointer;
+  transition:background-color 120ms ease, border-color 120ms ease;
+  -webkit-appearance:none;
+  appearance:none;
+}
+button.angle:hover{background-color:#5546e8 !important;}
+button.angle.active{border-color:var(--htec-mint) !important;background-color:#5546e8 !important;}
+button.angle .arr{font-family:var(--fm);font-size:11px;opacity:.75;}
+button.angle:hover .arr{opacity:1;}
+
+.anote{font-family:var(--fs);font-size:13px;color:#a9adc4;line-height:1.55;}
+
+.ttrack-wrap{margin-top:18px;display:none;}
+.ttrack-wrap.visible{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.tcard{background:#14141f;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:16px 18px;}
+.tcard-label{font-family:var(--fm);font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#c4c7da;margin-bottom:10px;}
+.tcard-opener{font-size:13.5px;line-height:1.55;color:#f4f5fb;font-style:italic;background:rgba(109,93,246,.08);border:1px solid rgba(109,93,246,.22);border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+.tcard-row{display:flex;flex-direction:column;gap:7px;}
+.tcard-item{display:grid;grid-template-columns:16px 1fr;gap:8px;font-size:13px;line-height:1.45;color:#d7d9e6;}
+.tcard-item .ti{font-family:var(--fm);font-size:10px;font-weight:600;color:#a9adc4;padding-top:2px;}
+.tcard-item b{color:#f4f5fb;font-weight:600;}
+.tcard-pushback{background:#1c1c2b;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px 14px;margin-top:10px;}
+.tcard-pushback .tcard-label{color:var(--htec-mint);margin-bottom:6px;}
+.tcard-pushback .tcard-item{color:#c7c9d9;}
+.tcard-pushback .tcard-item .ti{color:#8b8fa8;}
+.tcard-pushback .tcard-item b{color:#fff;}
+.ttrack-title{font-family:var(--fm);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;grid-column:1/-1;}
+
+.hist{background:#14141f;border-top:1px solid rgba(255,255,255,.12);padding:20px 30px 24px;border-radius:0 0 12px 12px;display:grid;grid-template-columns:1fr;gap:14px;align-items:flex-start;}
+.hlbl{font-family:var(--fm);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--htec-amazon-green);}
+.hbody{font-family:var(--fs);font-size:13.5px;line-height:1.5;color:#d7d9e6;}
+.hbody b{color:#f4f5fb;font-weight:600;}
+
+.tl{margin-top:13px;display:flex;align-items:stretch;gap:4px;font-family:var(--fm);font-size:11px;letter-spacing:.04em;}
+.tli{padding:10px 14px;background:#1c1c27;border:1px solid rgba(255,255,255,.12);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:3px;line-height:1.4;color:#d7d9e6;}
+.tli-top{display:flex;align-items:center;gap:8px;}
+.tli-sub{font-size:10px;color:#a9adc4;letter-spacing:.04em;}
+.tli.now{background:linear-gradient(180deg,#6d5df6,#5546e8);border-color:transparent;}
+.tli.now .tli-top{color:#fff;}
+.tli.now .tli-sub{color:rgba(255,255,255,.78);}
+.tli.now .tld{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.28);}
+.tld{width:7px;height:7px;border-radius:50%;background:#565a70;flex-shrink:0;}
+.tli.past .tld{background:var(--htec-amazon-green);}
+.tlline{flex:0 0 12px;height:1px;background:#3a3a4d;align-self:center;}
+
+.acts{margin-top:20px;display:flex;gap:8px;align-items:center;}
+.asp{flex:1;}
+.btn{display:inline-flex;align-items:center;gap:7px;font:500 12.5px var(--fs);padding:9px 16px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:all 120ms ease;}
+.btn .arr{font-family:var(--fm);}
+.bmint{background:#6d5df6;color:#fff;border-color:#6d5df6;}
+.bmint:hover{background:#5546e8;border-color:#5546e8;}
+.bghost{background:transparent;color:#f4f5fb;border-color:rgba(255,255,255,.25);}
+.bghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);}
+.bicon{padding:9px 13px;}
+
+.fn{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:20px;font-family:var(--fm);font-size:10px;letter-spacing:.04em;color:#7f8399;line-height:1.7;}
+.fnl{flex:1;text-transform:uppercase;letter-spacing:.07em;}
+.fnl b{color:#c4c7da;font-weight:500;}
+.fnr{text-align:right;text-transform:uppercase;letter-spacing:.07em;}
+.fnr b{color:var(--accent);font-weight:500;}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(18px);background:#1c1c2b;border:1px solid rgba(255,255,255,.14);color:var(--htec-mint);font:500 12.5px var(--fs);padding:10px 17px;border-radius:999px;box-shadow:0 12px 32px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity 180ms,transform 180ms;z-index:100;display:flex;align-items:center;gap:8px;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+.tck{width:15px;height:15px;border-radius:50%;background:var(--htec-mint);color:#0c0c16;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
+</style>
+
+<div class="chrome">
+  <div class="chrome-logo">Symphony</div>
+  <div class="chrome-div"></div>
+  <nav class="bc">
+    <span>Sales OS</span><span class="sep">/</span>
+    <span>Agents</span><span class="sep">/</span>
+    <span class="here">Meeting prep</span>
+  </nav>
+  <div class="chrome-spacer"></div>
+  <button class="chrome-cta">Open in HubSpot &#x2192;</button>
+  <div class="chrome-av" title="Lara Vidovi&#x107;">LV</div>
+</div>
+
+<div class="page">
+
+  <div class="cdown" role="status">
+    <span class="cpulse" aria-hidden="true"></span>
+    <div>
+      <div class="cwhen">Starts in 28 minutes &#xB7; Today 14:30 CET</div>
+      <div class="cmt">Intro call: Riya Patel (SkyWater) &#x2194; Lara Vidovi&#x107; <span>&#xB7; 30 min &#xB7; Google Meet</span></div>
+    </div>
+    <div class="cspacer"></div>
+    <div class="csrc"><span class="gdot"></span>Auto-triggered from Google Calendar</div>
+  </div>
+
+  <div class="eyebrow">
+    <span class="atag">Agent &#xB7; Meeting prep</span>
+    <span class="esep">&#xB7;</span>
+    <span>Brief #042</span>
+    <span class="esep">&#xB7;</span>
+    <span>Auto-saves to deal record post-call</span>
+  </div>
+
+  <article>
+    <header class="hero">
+      <div class="av">RP</div>
+      <div>
+        <h1 class="hname">Riya Patel</h1>
+        <p class="htitle">VP Engineering &#xB7; Process &amp; Yield</p>
+        <p class="hco"><b>SkyWater Technology</b> &#xB7; Specialty foundry &#xB7; Bloomington, MN</p>
+        <div class="hmeta">
+          <span><b>14 yrs</b> in semis</span>
+          <span>Ex-<b>GlobalFoundries</b>, <b>Intel</b></span>
+          <span>PhD ECE &#xB7; <b>Stanford</b></span>
+          <span>Joined Apr 2026</span>
+        </div>
+      </div>
+      <div class="hicp">
+        <span class="hicpn">84</span>
+        <span class="hicpl">ICP score</span>
+        <div class="hdeal-top"><span class="ddot-top"></span>Est. <b>&#x20AC;420K</b> &#xB7; prospecting</div>
+      </div>
+    </header>
+
+    <section class="secs">
+
+      <div class="sec">
+        <div class="slbl"><span class="num">01</span>Background</div>
+        <div class="sbody">
+          <p>Joined SkyWater <b>Apr 2026</b> as <b>VP Engineering</b> to harden process-control after the CHIPS Act award. At GlobalFoundries she ran a 220-person yield org and signed off on <em>Symphony's 2023 wafer-mapping engagement</em> with her then-deputy, Daniel Chen.</p>
+          <p>Unusually open to outside partners: she values iteration speed over insourcing optics. Direct, technical, no slide decks.</p>
+          <div class="psrc" style="margin-top:2px;">HubSpot deal #2384 &#xB7; LinkedIn &#xB7; SkyWater 10-Q (May 2026)</div>
+
+          <div class="intel">
+            <div class="icell"><span class="ik">Recent move</span><span class="iv">Keynote at <b>SEMI ISS</b> &#x2014; "Yield as a software problem"</span><span class="iw">11 Mar 2026</span></div>
+            <div class="icell"><span class="ik">Public posture</span><span class="iv"><em>"insourcing every YE problem is how fabs miss CHIPS deadlines"</em></span><span class="iw">17 May 2026</span></div>
+            <div class="icell"><span class="ik"></span><span class="iv"><span class="psrc" style="margin:0;">LinkedIn post &#xB7; 1,200+ reactions</span></span><span class="iw"></span></div>
+            <div class="icell"><span class="ik">Inner circle at SkyWater</span><span class="iv">CTO <b>Steve Kosier</b>, COO <b>Tom Sonderman</b> &#x2014; both ex-AMD, both signed off on her hire</span><span class="iw">&#xB7;</span></div>
+            <div class="icell"><span class="ik"></span><span class="iv"><span class="psrc" style="margin:0;">SkyWater board proxy &#xB7; SEC EDGAR</span></span><span class="iw"></span></div>
+            <div class="icell"><span class="ik">Mutuals you have</span><span class="iv"><b>Daniel Chen</b> (your warm intro), <b>Aparna Iyer</b> (Symphony alum, now Lam)</span><span class="iw">2 connections</span></div>
+            <div class="icell"><span class="ik"></span><span class="iv"><span class="psrc" style="margin:0;">Apollo &#xB7; LinkedIn graph</span></span><span class="iw"></span></div>
+          </div>
+
+          <div style="margin:14px 0 4px;padding:11px 14px;background:rgba(109,93,246,.10);border:1px solid rgba(109,93,246,.30);border-radius:8px;">
+            <div style="font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--htec-amazon-green);margin-bottom:7px;">Mirror her language</div>
+            <div style="font-size:13.5px;line-height:1.55;color:#d7d9e6;">
+              She treats process-control as a software problem. Echo three phrases in your first 90 seconds: <b>"yield as a software problem,"</b> <b>"operational continuity,"</b> <b>"no displacement."</b>
+            </div>
+            <div class="psrc" style="margin-top:6px;">SEMI ISS keynote (Mar 2026) &#xB7; LinkedIn posts (Apr&#x2013;May 2026)</div>
+          </div>
+
+          <div style="margin:10px 0 4px;padding:11px 14px;background:rgba(109,93,246,.10);border:1px solid rgba(109,93,246,.30);border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
+            <div style="flex:1;">
+              <div style="font-family:var(--fm);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--htec-amazon-green);margin-bottom:7px;">Cross-rep pattern</div>
+              <div style="font-size:13.5px;line-height:1.55;color:#d7d9e6;">
+                Three sellers met profiles like Riya's in 90 days. <b>Two won by leading with audit-window, not capability.</b> Leading with "our team" lost.
+              </div>
+              <div class="psrc" style="margin-top:6px;">Symphony deal analytics &#xB7; 90-day win/loss</div>
+            </div>
+          </div>
+
+          <div style="margin:10px 0 0;">
+            <button onclick="toggleTeamNotes()" style="display:inline-flex;align-items:center;gap:7px;font-family:var(--fs);font-size:12.5px;font-weight:500;padding:8px 15px;border-radius:999px;background:transparent;color:var(--htec-amazon-green);border:1px solid rgba(109,93,246,.45);cursor:pointer;transition:all 120ms ease;" onmouseover="this.style.background='rgba(109,93,246,.10)'" onmouseout="this.style.background='transparent'"><span style="font-size:14px;">&#x1F465;</span> Lara's team notes on SkyWater <span style="font-family:var(--fm);font-size:11px;opacity:.7;" id="team-arrow">&#x25BE;</span></button>
+            <div id="team-notes" style="display:none;margin-top:10px;padding:14px 16px;background:#14141f;border:1px solid rgba(255,255,255,.12);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.35);">
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#6d5df6,#9d92ff);color:#fff;display:flex;align-items:center;justify-content:center;font:500 10px var(--fs);flex-shrink:0;">MK</div>
+                  <div style="flex:1;">
+                    <div style="font-size:12px;color:#c4c7da;margin-bottom:2px;"><b style="color:#f4f5fb;">Marko Kova&#x10D;evi&#x107;</b> &#xB7; spoke with Tom Sonderman (COO) &#xB7; <span style="font-family:var(--fm);font-size:10px;color:#a9adc4;">28 Mar 2026</span></div>
+                    <div style="font-size:13px;line-height:1.5;color:#d7d9e6;"><b>"90 days from locking the vendor shortlist"</b> for process-control. Riya is the decision-maker. Praised Symphony's GF track record unprompted.</div>
+                  </div>
+                </div>
+                <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:10px;display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#6d5df6,#9d92ff);color:#fff;display:flex;align-items:center;justify-content:center;font:500 10px var(--fs);flex-shrink:0;">AJ</div>
+                  <div style="flex:1;">
+                    <div style="font-size:12px;color:#c4c7da;margin-bottom:2px;"><b style="color:#f4f5fb;">Ana Jovanovi&#x107;</b> &#xB7; email thread with Steve Kosier (CTO) &#xB7; <span style="font-family:var(--fm);font-size:10px;color:#a9adc4;">12 Apr 2026</span></div>
+                    <div style="font-size:13px;line-height:1.5;color:#d7d9e6;">Asked for <b>a one-pager on Symphony's Camstar work</b>. Sent 14 Apr, opened twice, no reply. His focus: compliance-timeline feasibility.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="psrc" style="margin-top:10px;">HubSpot activity log &#xB7; Slack #skywater-account</div>
+            </div>
+          </div>
+
+          <p class="tldr" style="margin-top:14px;"><span class="tldrk">Why she matters now:</span>The CHIPS award funds process-control modernization, Riya was hired to spend it, and she picks partners within 90 days.</p>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="slbl"><span class="num">02</span>Hypothesized pain</div>
+        <div class="sbody">
+          <ul class="pains">
+            <li><span class="pn">A</span><div><b>CHIPS Act audit obligation</b>A verified process-control stack is due within 12 months. Their Camstar MES needs heavy glue code for the new compliance reports.<div class="psrc">Inferred from CHIPS Office award terms (1 May) + SkyWater 10-Q risk factors</div></div></li>
+            <li><span class="pn">B</span><div><b>Yield engineering team gap</b>Two senior YE roles open since January. The local SiC talent pool is thin; outsourced delivery is the realistic path.<div class="psrc">LinkedIn jobs scan &#xB7; 90-day open requisitions</div></div></li>
+            <li><span class="pn">C</span><div><b>Carryover MES integration debt</b>Called MES modernization a personal priority on a 2023 podcast. A worldview, not just a SkyWater fact.<div class="psrc">SemiEngineering podcast &#xB7; 14 Sept 2023, 18:42 mark</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="slbl"><span class="num">03</span>Recommended angles</div>
+        <div class="sbody">
+          <div class="angles">
+            <button class="angle active" id="btn-chips" onclick="showTrack('chips')">CHIPS Act compliance stack <span class="arr">&#x2192;</span></button>
+            <button class="angle" id="btn-mes" onclick="showTrack('mes')">MES modernization <span class="arr">&#x2192;</span></button>
+            <button class="angle" id="btn-yield" onclick="showTrack('yield')">Yield engineering bridge capacity <span class="arr">&#x2192;</span></button>
+            <button class="angle" id="btn-sic" onclick="showTrack('sic')">SiC process-control <span class="arr">&#x2192;</span></button>
+          </div>
+
+          <div class="ttrack-wrap visible" id="ttrack">
+            <div class="ttrack-title" id="ttrack-title">CHIPS Act compliance stack &#x2014; talking track</div>
+            <div class="tcard" id="tcard-main">
+              <div class="tcard-label">Opener</div>
+              <div class="tcard-opener" id="tc-opener">Congrats on the May 1 award. How are you thinking about the audit window?</div>
+              <div class="tcard-label" style="margin-top:12px;">Two questions to ask</div>
+              <div class="tcard-row" id="tc-qs">
+                <div class="tcard-item"><span class="ti">Q1</span><span>What's your current MES glue-code surface?</span></div>
+                <div class="tcard-item"><span class="ti">Q2</span><span>Who owns the audit deliverable internally?</span></div>
+              </div>
+              <div class="tcard-label" style="margin-top:12px;">One data point to land</div>
+              <div class="tcard-row" id="tc-dp">
+                <div class="tcard-item"><span class="ti">&#x2192;</span><span><b>STMicro's audit-stack work</b>: 11 weeks, 2-FTE bridge model. We can share the shape of it.</span></div>
+              </div>
+            </div>
+            <div class="tcard tcard-pushback">
+              <div class="tcard-label">If she pushes back</div>
+              <div class="tcard-row" id="tc-pb">
+                <div class="tcard-item"><span class="ti">&#x2192;</span><span>Offer a <b>2-week diagnostic</b>: no commitment, just a clean picture of what the audit requires.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="anote" style="margin-top:18px;">Lead with <b>CHIPS Act compliance</b>: the loudest deadline, the cleanest ROI. Pivot to <b>MES modernization</b> if she opens up. Skip "design services" and frame everything as <em style="font-style:normal;background:var(--htec-mint);color:#0c0c16;padding:0 4px;border-radius:2px;">operational continuity for the audit</em>.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="hist">
+      <div class="hlbl">Symphony history</div>
+      <div class="hbody">
+        <p style="margin:0;"><b>Last touchpoint:</b> Daniel Chen replied <b>11 Apr 2026</b> and offered to introduce Symphony to Riya. <b>Warm intro is on file.</b></p>
+        <div class="tl">
+          <div class="tli past">
+            <div class="tli-top"><span class="tld"></span>Wafer-mapping</div>
+            <div class="tli-sub">GF &#xB7; 2023</div>
+          </div>
+          <div class="tlline"></div>
+          <div class="tli past">
+            <div class="tli-top"><span class="tld"></span>Catch-up call</div>
+            <div class="tli-sub">Q4 &#xB7; Nov 2025</div>
+          </div>
+          <div class="tlline"></div>
+          <div class="tli past">
+            <div class="tli-top"><span class="tld"></span>Daniel intro</div>
+            <div class="tli-sub">Apr 2026</div>
+          </div>
+          <div class="tlline"></div>
+          <div class="tli now">
+            <div class="tli-top"><span class="tld"></span>Intro call</div>
+            <div class="tli-sub">Today &#xB7; 14:30</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+
+  <div class="acts">
+    <button class="btn bmint" onclick="toast('Brief attached to calendar event')">Attach to calendar event <span class="arr">&#x2192;</span></button>
+    <button class="btn bghost" onclick="toast('Syncing to HubSpot deal #2384&#x2026;')">Sync to HubSpot</button>
+    <div class="asp"></div>
+    <button class="btn bghost bicon" title="Print">&#x2399;</button>
+    <button class="btn bghost bicon" title="Share">&#x2197;</button>
+  </div>
+
+  <div class="fn">
+    <div class="fnl"><b>Sources</b> &#xB7; HubSpot deal #2384 &#xB7; Apollo &#xB7; Clay enrichment &#xB7; LinkedIn &#xB7; SEC EDGAR &#xB7; CHIPS Office &#xB7; SemiEngineering podcast &#xB7; SkyWater 10-Q</div>
+    <div class="fnr">Generated <b>14:02 CET</b> &#xB7; 28 min before meeting<br>Auto-files to HubSpot after call ends</div>
+  </div>
+
+</div>
+
+<div class="toast" id="t"><span class="tck">&#x2713;</span><span id="tm"></span></div>
+
+<script>
+let tt;
+function toast(m){
+  const el=document.getElementById('t');
+  document.getElementById('tm').textContent=m;
+  el.classList.add('on');
+  clearTimeout(tt);
+  tt=setTimeout(()=>el.classList.remove('on'),2400);
+}
+
+function toggleTeamNotes(){
+  var el=document.getElementById('team-notes');
+  var arr=document.getElementById('team-arrow');
+  if(el.style.display==='none'){el.style.display='block';arr.textContent='\u25b4';}
+  else{el.style.display='none';arr.textContent='\u25be';}
+}
+
+const tracks = {
+  chips: {
+    title: 'CHIPS Act compliance stack \u2014 talking track',
+    opener: 'Congrats on the May 1 award. How are you thinking about the audit window?',
+    qs: [
+      { label: 'Q1', text: 'What\'s your current MES glue-code surface?' },
+      { label: 'Q2', text: 'Who owns the audit deliverable internally?' }
+    ],
+    dp: [{ label: '\u2192', text: '<b>STMicro\'s audit-stack work</b>: 11 weeks, 2-FTE bridge model. We can share the shape of it.' }],
+    pb: [{ label: '\u2192', text: 'Offer a <b>2-week diagnostic</b>: no commitment, just a clean picture of what the audit requires.' }]
+  },
+  mes: {
+    title: 'MES modernization \u2014 talking track',
+    opener: 'You called MES modernization a priority back at GF. Has that carried over to SkyWater\'s Camstar stack?',
+    qs: [
+      { label: 'Q1', text: 'How much of the CHIPS compliance reporting runs through Camstar today versus workarounds?' },
+      { label: 'Q2', text: 'Is MES modernization a standalone initiative or bundled into the audit deliverable?' }
+    ],
+    dp: [{ label: '\u2192', text: '<b>Symphony\'s Camstar track record</b>: two fab-scale modernizations in 16-week windows, one during an active compliance cycle.' }],
+    pb: [{ label: '\u2192', text: 'If it\'s handled internally: "Understood. Our best engagements are the ones where the internal team leads and we run the glue-code surface. No displacement."' }]
+  },
+  yield: {
+    title: 'Yield engineering bridge capacity \u2014 talking track',
+    opener: 'Two senior YE roles open since January. How are you bridging in the interim?',
+    qs: [
+      { label: 'Q1', text: 'What\'s the critical-path dependency \u2014 is anything blocked on those hires right now?' },
+      { label: 'Q2', text: 'Is the preference to eventually bring this fully in-house, or is a hybrid model on the table?' }
+    ],
+    dp: [{ label: '\u2192', text: '<b>Bridge capacity model</b>: embedded YE teams at two specialty fabs, ramped in under 3 weeks.' }],
+    pb: [{ label: '\u2192', text: 'On knowledge-transfer risk: "We document as we go. When the hire lands, there\'s a full process log, not a black box."' }]
+  },
+  sic: {
+    title: 'SiC process-control \u2014 talking track',
+    opener: 'Your SiC roadmap is genuinely differentiated. Where are the process-control gaps at current volumes?',
+    qs: [
+      { label: 'Q1', text: 'How mature is your inline metrology coverage for SiC defect modes today?' },
+      { label: 'Q2', text: 'Is the SiC process-control work on the same timeline as the CHIPS audit, or running in parallel?' }
+    ],
+    dp: [{ label: '\u2192', text: '<b>SiC yield characterization</b>: defect-density modeling with a Tier 2 power fab cut excursion rate 18% in 6 months.' }],
+    pb: [{ label: '\u2192', text: 'On SiC depth: "Fair. We\'ll show exactly where our direct SiC experience ends and where process-control methodology takes over."' }]
+  }
+};
+
+let activeTrack = 'chips';
+
+function showTrack(key) {
+  var wrap = document.getElementById('ttrack');
+  var btns = document.querySelectorAll('button.angle');
+  btns.forEach(function(b){ b.classList.remove('active'); });
+
+  if (activeTrack === key && wrap.classList.contains('visible')) {
+    wrap.classList.remove('visible');
+    activeTrack = null;
+    return;
+  }
+  activeTrack = key;
+  document.getElementById('btn-' + key).classList.add('active');
+  var d = tracks[key];
+  document.getElementById('ttrack-title').textContent = d.title;
+  document.getElementById('tc-opener').textContent = d.opener;
+
+  var qEl = document.getElementById('tc-qs');
+  qEl.innerHTML = d.qs.map(function(q){ return '<div class="tcard-item"><span class="ti">' + q.label + '</span><span>' + q.text + '</span></div>'; }).join('');
+
+  var dpEl = document.getElementById('tc-dp');
+  dpEl.innerHTML = d.dp.map(function(p){ return '<div class="tcard-item"><span class="ti">' + p.label + '</span><span>' + p.text + '</span></div>'; }).join('');
+
+  var pbEl = document.getElementById('tc-pb');
+  pbEl.innerHTML = d.pb.map(function(p){ return '<div class="tcard-item"><span class="ti">' + p.label + '</span><span>' + p.text + '</span></div>'; }).join('');
+
+  wrap.classList.add('visible');
+}
+</script>
+
+</body>
+</html>
